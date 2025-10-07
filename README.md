@@ -5,7 +5,7 @@
   
   This project should demenstrate HTML fundamentals using: 
   <br><ul>
-    <listructure</li>
+    <li>structure</li>
     <li>links</li>
     <li>lists</li>
     <li>images</li>
