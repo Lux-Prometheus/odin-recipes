@@ -1,0 +1,93 @@
+/* Reset list styles for clean layout */
+h1 {
+    display: flex;
+    text-decoration: none;
+    justify-content: center; /* Centers items horizontally */
+    margin: 0 auto; /* Centers the ul itself */
+    padding: 30px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap:60px; /* Space between list items */
+  justify-content: center; /* Centers items horizontally */
+  margin: 0 auto; /* Centers the ul itself */
+}
+
+/* Style the list item */
+li {
+  display: inline-block; /* Ensures proper flow in flex container */
+}
+
+/* Photo button styles */
+.photo-button {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 16px; /* Slightly larger for softer curves */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Softer, deeper shadow */
+  width: 200px; /* Slightly larger for visual impact */
+  aspect-ratio: 1/1; /* Square shape */
+  position: relative; /* For overlay or text */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+/* Image styles */
+.photo-button img {
+  display: block;
+  width: auto;
+  height: 100%;
+  border-radius: 16px; /* Match button’s border-radius */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover effect for interactivity */
+.photo-button:hover {
+  transform: scale(1.15); /* Slight lift effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25); /* Enhanced shadow */
+}
+
+.photo-button:hover img {
+  transform: scale(1.1); /* Subtle zoom */
+  filter: brightness(1.1); /* Brighten image slightly */
+}
+
+/* Focus state for accessibility */
+.photo-button:focus {
+  outline: 2px solid #007bff; /* Blue focus ring */
+  outline-offset: 2px;
+}
+
+/* Optional: Add a subtle overlay with text for context */
+.photo-button::after {
+  content: attr(data-overlay); /* Add descriptive text */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent); /* Gradient overlay */
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show overlay on hover */
+.photo-button:hover::after {
+  opacity: 1;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .photo-button {
+    width: 120px; /* Smaller size for mobile */
+  }
+}
