@@ -1,93 +1,241 @@
-/* Reset list styles for clean layout */
-h1 {
-    display: flex;
-    text-decoration: none;
-    justify-content: center; /* Centers items horizontally */
-    margin: 0 auto; /* Centers the ul itself */
-    padding: 30px;
+/* ____________________________________________________________________________________________________ *\
+ *
+ * Project: Odin Recipes
+ * File: Stylesheet.css
+ * Description: Primary stylesheet for global styles and components
+ * Author: Lux-Prometheus
+ * Created: October 2025
+\* ____________________________________________________________________________________________________ */
+
+
+ /* 
+ * Font: Norse Regular
+ * Source: Local file (assets/fonts/norse.regular.otf)
+ */
+@font-face {
+    font-family: Norse Bold;
+    src: url(../fonts/norse/Norsebold.otf)
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap:60px; /* Space between list items */
-  justify-content: center; /* Centers items horizontally */
-  margin: 0 auto; /* Centers the ul itself */
+/* 
+ * Font: Roboto Medium
+ * Source: Local file (assets/fonts/roboto/static/Roboto-Medium.ttf)
+ */
+@font-face {
+    font-family: Roboto Medium;
+    src: url(../fonts/roboto/static/Roboto-Medium.ttf);
 }
+
+/* 
+ * Font: Inter
+ * Source: Local file (assets/fonts/roboto/static/Roboto-Medium.ttf)
+ */
+@font-face {
+    font-family: Inter;
+    src: url(../fonts/inter/static/Inter_28pt-Regular.ttf);
+}
+
+/*
+ * Component: Navbar
+ * Description: Styles the navigation bar
+ * Usage: Apply to <nav> element (ex: <nav><a class="navbarlogo" href="index.html">Home</a><ul>...</ul></nav>)
+ * Properties:
+ *   - position: sticky, top: 0 (sticks to top of viewport)
+ *   - display: flex, justify-content: space-between, align-items: center (horizontal layout with centered items)
+ *   - padding: 0 20px (horizontal spacing)
+ *   - background-color: #fff (white background)
+ */
+nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #fff;
+}
+
+/* 
+ * Component: Navbar Logo
+ * Descripiton: Styles the container for the navbar logo, aligning it vertically
+ * Usage: Apply to an <a> or <div> wrapping the logo (ex: <a>class="navbarlogo" href="index.html"><img src="logo.svg" alt="Company Logo"></a> )
+ * Properties:
+ *  - display: flex (enables flexbox for alignment)
+ *  - align-items: center (certically centers the logo)
+ */
+.navlogo {
+    display: flex;
+    align-items: center;
+}
+
+/*
+ * Component: Navbar Logo Link
+ * Description: Styles the anchor tag within the navbar logo container, setting typography and alignment
+ * Usage: Apply to <a> inside .navlogo (ex: <a class="navlogo" href="index.html"><img src="logo.svg" alt="Company Logo"></a>)
+ * Properties:
+ *   - display: flex (enables flexbox for alignment)
+ *   - font-family: Norse Bold (custom font for logo text)
+ *   - font-size: 1.25em (scales text size relative to parent)
+ *   - align-items: center (vertically centers content)
+ *   - padding-right: 10px (adds right spacing)
+ */
+.navlogo a {
+    display: flex;
+    font-family: Norse Bold;
+    font-size: 1.25em;
+    align-items: center;
+    padding-right: 10px;
+}
+
+/*
+ * Component: Navbar Logo Image
+ * Description: Styles the logo image within the navbar logo container
+ * Usage: Apply to <img> inside .navlogo (ex: <a class="navlogo" href="index.html"><img src="logo.svg" alt="Company Logo"></a>)
+ * Properties:
+ *   - width: 4rem (sets logo width to ~64px at default font size)
+ */
+.navlogo img {
+    width: 4rem;
+}
+
+/*
+ * Component: Navbar Links
+ * Description: Styles anchor tags within the navbar links for navigation items
+ * Usage: Apply to <a> inside .nav-links (ex: <ul class="nav-links"><li><a href="#">Link</a></li></ul>)
+ * Properties:
+ *   - display: block (ensures full-width clickable area)
+ *   - padding: 24px 0px (adds vertical padding for spacing)
+ *   - color: rgb(97, 97, 97) (sets text color to dark gray, overriding #111)
+ *   - text-decoration: none (removes default underline)
+ *   - font-family: Inter (applies Inter font for text)
+ *   - font-size: 14px (sets text size)
+ *   - font-weight: 600 (sets semi-bold weight)
+ */
+.nav-links a {
+    display: block;
+    padding: 24px 0px;
+    color: #111;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: Inter;
+    font-weight: 600;
+    color: rgb(97, 97, 97);
+}
+
+/*
+ * Component: Navbar Links List
+ * Description: Styles the unordered list for navigation links, using flexbox for layout
+ * Usage: Apply to <ul> inside nav (ex: <nav><ul class="nav-links"><li><a href="#">Link</a></li></ul></nav>)
+ * Properties:
+ *   - list-style: none (removes default bullets)
+ *   - padding: 0px, padding-right: 20px (resets padding with right offset)
+ *   - display: flex (enables flexbox for horizontal layout)
+ *   - flex-wrap: wrap (allows wrapping on small screens)
+ *   - gap: 30px (spaces list items)
+ *   - justify-content: right (aligns items to the right)
+ */
+nav ul {
+    list-style: none;
+    padding: 0px;
+    padding-right: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap:30px; /* Space between list items */
+    justify-content: right; /* Centers items horizontally */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    /* gap:60px; /* Space between list items */
+    /* justify-content: center; /* Centers items horizontally */
+    /* margin: 0 auto; /* Centers the ul itself */ 
+    
 
 /* Style the list item */
 li {
-  display: inline-block; /* Ensures proper flow in flex container */
+    display: inline-block; /* Ensures proper flow in flex container */
 }
 
 /* Photo button styles */
 .photo-button {
-  display: inline-block;
-  text-decoration: none;
-  cursor: pointer;
-  overflow: hidden;
-  border-radius: 16px; /* Slightly larger for softer curves */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Softer, deeper shadow */
-  width: 200px; /* Slightly larger for visual impact */
-  aspect-ratio: 1/1; /* Square shape */
-  position: relative; /* For overlay or text */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 16px; /* Slightly larger for softer curves */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Softer, deeper shadow */
+    width: 200px; /* Slightly larger for visual impact */
+    aspect-ratio: 1/1; /* Square shape */
+    position: relative; /* For overlay or text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
 }
 
 /* Image styles */
 .photo-button img {
-  display: block;
-  width: auto;
-  height: 100%;
-  border-radius: 16px; /* Match button’s border-radius */
-  transition: transform 0.3s ease, filter 0.3s ease;
+    display: block;
+    width: auto;
+    height: 100%;
+    border-radius: 16px; /* Match button’s border-radius */
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 /* Hover effect for interactivity */
 .photo-button:hover {
-  transform: scale(1.15); /* Slight lift effect */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25); /* Enhanced shadow */
-}
+    transform: scale(1.15); /* Slight lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25); /* Enhanced shadow */
+}   
 
 .photo-button:hover img {
-  transform: scale(1.1); /* Subtle zoom */
-  filter: brightness(1.1); /* Brighten image slightly */
-}
+    transform: scale(1.1); /* Subtle zoom */
+    filter: brightness(1.1); /* Brighten image slightly */
+}   
 
 /* Focus state for accessibility */
 .photo-button:focus {
-  outline: 2px solid #007bff; /* Blue focus ring */
-  outline-offset: 2px;
+    outline: 2px solid #007bff; /* Blue focus ring */
+    outline-offset: 2px;
 }
 
 /* Optional: Add a subtle overlay with text for context */
 .photo-button::after {
-  content: attr(data-overlay); /* Add descriptive text */
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent); /* Gradient overlay */
-  color: white;
-  padding: 10px;
-  text-align: center;
-  font-size: 14px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: bold;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+    content: attr(data-overlay); /* Add descriptive text */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent); /* Gradient overlay */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 /* Show overlay on hover */
 .photo-button:hover::after {
-  opacity: 1;
+    opacity: 1;
 }
 
 /* Responsive design */
 @media (max-width: 600px) {
-  .photo-button {
-    width: 120px; /* Smaller size for mobile */
-  }
+    .photo-button {
+        width: 120px; /* Smaller size for mobile */
+    }
 }
