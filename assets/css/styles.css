@@ -8,9 +8,19 @@
 \* ____________________________________________________________________________________________________ */
 
 
+
  /* 
  * Font: Norse Regular
  * Source: Local file (assets/fonts/norse.regular.otf)
+ */
+@font-face {
+    font-family: Norse Regular;
+    src: url(../fonts/norse/norse.regular.otf)
+}
+
+/* 
+ * Font: Norse Bold
+ * Source: Local file (assets/fonts/Norsebold.otf)
  */
 @font-face {
     font-family: Norse Bold;
@@ -35,6 +45,7 @@
     src: url(../fonts/inter/static/Inter_28pt-Regular.ttf);
 }
 
+
 /*
  * Component: Navbar
  * Description: Styles the navigation bar
@@ -51,8 +62,11 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 30px;
     background-color: #fff;
+    border-bottom: 1px solid #d1d5db; /* Light gray divider */
+    z-index: 1000;
+
 }
 
 /* 
@@ -144,11 +158,63 @@ nav ul {
     justify-content: right; /* Centers items horizontally */
 }
 
+.container {
+    text-align: center;
+}
 
+.h1-hero {
+    display: inline-block;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 4em;
+    padding-top: 150px;
+    color: oklch(0.373 0.034 259.733);
+}
 
+.p-hero {
+    display: inline-block;
+    text-align: center;
+    font-family: Inter;
+    font-size: 1.5em;
+    padding-top: 30px;
+    color: oklch(0.551 0.027 264.364)
+}
 
+.text-gold {
+    color: rgb(169, 121, 43);
+}
 
+.recipe-body {
+    background-color: oklch(0.985 0.002 247.839);
+}
 
+.img-container {
+    background-image: url(../photos/odin-recipes-background.png);
+    background-size: contain; /* Scales to cover screen */
+    background-position: center; /* Centers image */
+    background-repeat: no-repeat;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.link-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #374151;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  font-family: Inter;
+}
+
+.link-button:hover {
+  background-color: #4b5563;
+}
 
 
 
